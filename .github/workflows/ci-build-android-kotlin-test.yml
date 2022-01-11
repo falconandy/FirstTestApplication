@@ -3,7 +3,7 @@ name: CI - Android Tests
 on:
   pull_request:
     paths:
-    - 'app/src/main/java/com/example/**'
+      - 'app/src/main/java/com/example/**'
 
 jobs:
   test:
