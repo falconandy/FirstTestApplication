@@ -1,0 +1,23 @@
+name: CI - Android Tests
+
+on: pull_request
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set Java SDK
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+
+      - name: Run Kotlin Tests
+        working-directory: .
+        run: |
+          bash ./gradlew build
+          bash ./gradlew test
