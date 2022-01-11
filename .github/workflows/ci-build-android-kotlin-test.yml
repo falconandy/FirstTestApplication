@@ -17,17 +17,7 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
-      - name: Build Kotlin
-        working-directory: .
-        run: |
-          ./gradlew build
-
       - name: Run Kotlin Tests
         working-directory: .
         run: |
-          ./gradlew test
-
-      - name: Stop gradlew daemon
-        working-directory: .
-        run: |
-          ./gradlew --stop
+          ./gradlew build
