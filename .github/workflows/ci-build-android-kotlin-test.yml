@@ -21,3 +21,8 @@ jobs:
         working-directory: .
         run: |
           ./gradlew build
+
+      - name: Stop gradlew daemon
+        working-directory: .
+        run: |
+          ./gradlew --stop
